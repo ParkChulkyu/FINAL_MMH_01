@@ -22,7 +22,6 @@
 	<link rel='shortcut icon'    href='img/logo-icon-dh.png'>
 	<link rel='apple-touch-icon' href='img/logo-icon-dh.png'>
 	
-	<link rel='stylesheet' href='resources/css/reset.css'>
 	<link rel='stylesheet' href='resources/css/style_header.css'>
 	<link rel='stylesheet' href='resources/css/reponsive.css'>
 	<link rel="stylesheet" href="resources/css/style1.css"/>
