@@ -75,10 +75,18 @@
          });
       }
    }
+<<<<<<< HEAD
+=======
 
+>>>>>>> d15a328c5b4cd7f4a8cecd23e7aa86ef40707205
 
 </script>
 
+<<<<<<< HEAD
+</script>
+
+=======
+>>>>>>> d15a328c5b4cd7f4a8cecd23e7aa86ef40707205
 <style type="text/css">
 input::placeholder {
    color: black;
@@ -280,3 +288,7 @@ body {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d15a328c5b4cd7f4a8cecd23e7aa86ef40707205
