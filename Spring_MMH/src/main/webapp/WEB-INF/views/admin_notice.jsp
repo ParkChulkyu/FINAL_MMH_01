@@ -8,16 +8,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<%@ include file="header.jsp" %>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript">
-      $(document).ready(function(){
-         $("#header1").load("header_nolog.html");
-       	$("#footer1").load("footer.html");
-        /* id 지정을 통해서도 가능합니다. 
-         $("#header").load("header.html #navbar")
-         */       
-      });
-</script>
 <style>
 h1{text-align: center; padding-top:5%; }
 #header1{position: relative;}
@@ -35,12 +27,6 @@ h1{text-align: center; padding-top:5%; }
 </head>
 
 <body>
-<!-- 	
-	<header>
-		<div id="header1"></div>
-	</header>
- -->	
- 	<jsp:include page="header.jsp"></jsp:include>
 	<h1 id="b">이전 공지사항</h1>
 		<table border = "1" class="tabl">
 			<c:choose>
@@ -64,9 +50,7 @@ h1{text-align: center; padding-top:5%; }
 				</td>
 			</tr>
 		</table>
-	<footer>
-		<div id="footer1"></div>
-	</footer>
+	<%@ include file="footer.jsp"%>
 </body>
 </html>
 

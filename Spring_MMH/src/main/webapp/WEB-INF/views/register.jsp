@@ -6,8 +6,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style type="text/css">
+h1 {
+	text-align: center;
+}
+
+form {
+	margin: auto;
+	width: 414px;
+}
+
+body {
+	font: 13px/1 'Nanum Gothic', 'Roboto', 'Open Sans';
+	color: #626262;
+	background: #ffffff;
+}
+
+table {
+	height: 10px;
+	width: 5000px;
+}
+
+th {
+	font-size: 20px;
+	width: 116px;
+	height: 42px;
+}
+</style>
 <meta charset="UTF-8">
 <title>Register</title>
+
+<%@ include file="header.jsp" %>  
 
 </head>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script> 
@@ -106,12 +135,11 @@
 
 </script>
 <body>
-
+	
 	<h1>회원가입</h1>
 
 	<form action="sign.do" method="post" name="signFrm" id="signFrm">
-		<table border="1">
-
+		<table>
 			<tr class="table-primary">
 				<th>아이디 :</th>
 				<td>
@@ -156,10 +184,10 @@
 			<tr class="table-primary">
 				<td colspan="7">
 					<input type="submit" value="가입하기"> 
-					<input type="button" onclick="location.href='index.jsp'" value="돌아가기" ></td>
+					<input type="button" onclick="location.href='admin_main.do'" value="돌아가기" ></td>
 			</tr>
 		</table>
 	</form>
-
+	<%@ include file="footer.jsp" %> 
 </body>
 </html>
