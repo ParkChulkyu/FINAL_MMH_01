@@ -20,8 +20,8 @@ public class MemberBizImpl implements MemberBiz {
 	}
 
 	@Override
-	public MemberDto selectOne(int myno) {
-		return null;
+	public MemberDto selectOne(int m_no) {
+		return dao.selectOne(m_no);
 	}
 
 	@Override
@@ -59,5 +59,10 @@ public class MemberBizImpl implements MemberBiz {
 	public int updateMember(MemberDto dto) {
 		// TODO Auto-generated method stub
 		return dao.updateMember(dto);
+	}
+	
+	@Override
+	public int updatePay(String m_id) {
+		return dao.updatePay(m_id);
 	}
 }

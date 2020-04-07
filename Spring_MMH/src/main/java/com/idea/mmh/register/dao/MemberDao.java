@@ -9,7 +9,7 @@ public interface MemberDao {
 //형님은 mmh_member. 였음
 	public List<MemberDto> selectList();
 
-	public MemberDto selectOne(int myno);
+	public MemberDto selectOne(int m_no);
 
 	public int insert(MemberDto dto);
 
@@ -24,4 +24,6 @@ public interface MemberDao {
 	public MemberDto selectMember(String id);
 	
 	public int updateMember(MemberDto dto);
+	
+	public int updatePay(String m_id);
 }

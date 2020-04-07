@@ -7,124 +7,138 @@
 <head>
 <meta charset="UTF-8">
 <title>프로젝트 리스트 및 피드백 보기 페이지</title>
-<link rel="stylesheet" href="resources/css/besides_main_page/user_write.css">
-<!-- <link rel="stylesheet" href="resources/css/besides_main_page/user_main.css"> -->
-<!-- <link rel="stylesheet" href="resources/css/besides_main_page/user_list.css"> -->
+<link rel="stylesheet" href="resources/board/css/user_write.css">
 
 <!-- include libraries(jQuery, bootstrap) -->
-<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css">
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css?ver=1"
+	rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- include summernote css/js-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script>
+<link
+	href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.css"
+	rel="stylesheet">
+<script
+	src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.js"></script>
 <!-- include summernote-ko-KR -->
-<script src="/resources/js/summernote-ko-KR.js"></script>
-<title>회의록 작성</title>
+<script src="resources/board/js/summernote-ko-KR.js"></script>
+<!-- js/html2canvas.js -->
+<!-- <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script> -->
+
+<!-- 이미지 에디터용도 -->
+<link type="text/css"
+	href="https://uicdn.toast.com/tui-color-picker/v2.2.3/tui-color-picker.css"
+	rel="stylesheet">
+<link type="text/css" href="resources/nhnimg/css/service-basic.css"
+	rel="stylesheet">
+<link href="resources/nhnimg/js/theme/white-theme.js">
+<!-- Failed to load resource: the server responded with a status of 404 () 해결 위해서 아래 링크추가, head태크에 profile추가 -->
+<link rel="icon" type="image/png" href="http://example.com/myicon.png">
 
 <script>
-   $(document).ready(function() {
-      $('#summernote').summernote({
-         placeholder : '회의 내용을 기록하세요',
-         height : 300, //에디터 높이
-         minHeight : 370, //최소 높이
-         maxHeight : null, //최대 높이
-         focus : true, // 에디터 로딩 후 포커스 맞출지 여부
-         lang : 'ko-KR' // 언어(한글)
-      });
-      //서머노트에 text 쓰기     
-      //      $('#summernote').summernote('insertText',content);
-      //서머노트 쓰기 비활성화
-      //     $('#summernote').summernote('disable');
-      //서머노트 쓰기 활성화
-      //     $('#summernote').summernote('enable');
-      //서머노트 리셋
-      //     $('#summernote').summernote('reset');
-      //마지막으로 한 행동 취소
-      //     $('#summernote').summernote('undo');
-      //앞으로 가기
-      //     $('#summernote').summernote('redo');
-   });
+	$(document).ready(function() {
+		$('#summernote').summernote({
+			placeholder : '회의 내용을 기록하세요',
+			height : 300, //에디터 높이
+			minHeight : 370, //최소 높이
+			maxHeight : null, //최대 높이
+			focus : true, // 에디터 로딩 후 포커스 맞출지 여부
+			lang : 'ko-KR' // 언어(한글)
+		});
+		//서머노트에 text 쓰기     
+		//      $('#summernote').summernote('insertText',content);
+		//서머노트 쓰기 비활성화
+		//     $('#summernote').summernote('disable');
+		//서머노트 쓰기 활성화
+		//     $('#summernote').summernote('enable');
+		//서머노트 리셋
+		//     $('#summernote').summernote('reset');
+		//마지막으로 한 행동 취소
+		//     $('#summernote').summernote('undo');
+		//앞으로 가기
+		//     $('#summernote').summernote('redo');
+	});
 
-   //유효성 및 값 보내기
-   function goWrite(frm) {
-      //    console.log(frm)
+	//유효성 및 값 보내기
+	function goWrite(frm) {
+		//    console.log(frm)
 
-      var ntitle = frm.ntitle.value;
-      var nwriter = frm.nwriter.value;
-      var ncontent = frm.ncontent.value; //가끔 구문 인식이 안될 때가 있음.
-      //    var ncontent = $("textarea[name='ncontent']").val(); //그때 대체사용할 구문
+		//       var nwriter = frm.nwriter.value;
+		var nwriter = $("div[id='nwriter']").val();
+		//       var ntitle = frm.ntitle.value
+		var ntitle = $("input[name='ntitle']").val();
+		var ncontent = frm.ncontent.value; //가끔 구문 인식이 안될 때가 있음.
+// 		var ncontent = $("textarea[name='ncontent']").val(); //그때 대체사용할 구문
 
-      //    if (ntitle.trim() == ''){
-      //       document.getElementById('input_ntitle').value = '<p>제목없음</p>';
-      // //       document.getElementById('input_ntitle').innerText = '<p>제목없음</p>';
-      // //       document.getElementById('input_ntitle').innerHTML = '<p>제목없음</p>';
-      //       alert("제목이 없어 '이름없음'으로 등록되었습니다.");
-      //        return true;
-      //    }
-      if (ncontent.trim() == '') {
-         alert("내용을 입력해주세요");
-         return false;
-      }
+		//    if (ntitle.trim() == ''){
+		//       document.getElementById('input_ntitle').value = '<p>제목없음</p>';
+		// //       document.getElementById('input_ntitle').innerText = '<p>제목없음</p>';
+		// //       document.getElementById('input_ntitle').innerHTML = '<p>제목없음</p>';
+		//       alert("제목이 없어 '이름없음'으로 등록되었습니다.");
+		//        return true;
+		//    }
+		if (ncontent.trim() == '') {
+			alert("내용을 입력해주세요");
+			return false;
+		}
 
-      //    console.log('서머노트 유효성검사, nno(log 4 中 1) : '+ nno);
-      console.log('서머노트 유효성검사, ntitle(log 4中2) : ' + ntitle);
-      console.log('서머노트 유효성검사, nwriter(log 4 中 3) : ' + nwriter);
-      console.log('서머노트 유효성검사, ncontent(log 4中 4) : ' + ncontent);
-      alert('저장할게요?');
-      //   frm.submit();
-      document.getElementById('subMitBtn').submit();
+		//    console.log('서머노트 유효성검사, nno(log 4 中 1) : '+ nno);
+		console.log('서머노트 유효성검사, ntitle(log 4中2) : ' + ntitle);
+		console.log('서머노트 유효성검사, nwriter(log 4 中 3) : ' + nwriter);
+		console.log('서머노트 유효성검사, ncontent(log 4中 4) : ' + ncontent);
+		alert('저장할게요?');
+		//   frm.submit();
+		document.getElementById('subMitBtn').submit();
 
-   }
+	}
 
-   //var div = document.createElement('div');
+	//var div = document.createElement('div');
+
+	//-----------------------------------------------------------------------------//
 </script>
-
+<title>회의록 작성</title>
+<%@ include file="header.jsp"%>
 </head>
 <body>
-	<h1>${login.m_id }</h1>
-	<div id="header">말만해</div>
-	<div id="nav">
-		<ul>
-			<li>글쓰기</li>
-			<li>드로잉에디터</li>
-			<li>포스트잇</li>
-			<li>아이디어 기획을 돕는 도구툴</li>
-			<li>달력</li>
-		</ul>
-	</div>
-	<div id="board">
-		<!-- 서머노트 글작성폼 들어와야해요 -->
-		<div style="width: 60%; margin: auto;">
-			<div>//1</div>
-			<form action="save.do" method="post" id="subMitBtn"
-				style="float: left;">
-				<input id="input_ntitle" type="text" name="ntitle"
-					style="width: 20%;" placeholder="제목을 입력하세요" /> <input type="text"
-					name="nwriter" style="width: 20%;" placeholder="작성자를 입력하세요" />
-				<!--  진한씨넨 이렇게함
-            <input type="hidden" name="cr_no" value="${dto.cr_no}"/>
-               <input type="hidden" name="cr_placeid" value="${dto.cr_placeid}"/>
+
+	<div>
+		<!-- 전체 기능영역 -->
+		<div>Meeting log</div>
+		<div>${today }</div>
+		<form action="save.do" method="post" id="subMitBtn"
+			style="float: left;">
+			<input type="text" name="nwriter" value="${user }">
+			<input type="text" name="ntitle" style="width: 60%;"
+				placeholder="제목을 입력하세요" />
+			<!--  진한씨넨 이렇게함
+               <input type="hidden" name="m_no" value="${dto.m_no}"/>
+               <input type="hidden" name="m_id" value="${dto.m_id}"/>
                <input type="hidden" name="category" value="${dto.cr_category}" />
                <input type="hidden" name="cr_path" value="${dto.cr_path}">  -->
+			<div id="wrap-ntextarea">
+				<!-- 서머노트 영역  -->
+<!-- 				<div id="summernote" style="float: left;"> -->
+<!-- 					<div style="width: 60%; margin: auto;"> -->
+<!-- 						<div class="summernotebody"> -->
+							<textarea id="summernote" name="ncontent"></textarea>
+<!-- 						</div> -->
 
-				<div class="summernotebody">
-					<textarea id="summernote" name="ncontent"></textarea>
-					//2
+						
+<!-- 					</div> -->
+<!-- 				</div> -->
+			</div>
+			<!-- 서머노트 종료 -->
+			<input type="button" value="글 작성" style="float: right;"
+				onclick="goWrite(subMitBtn);" /> 
+			<input type="button" value="목록"
+				onclick="location.href='user_list.do'" />
 
-					<!-- 메모장들 이곳저곳 들어가게 태그 생성 -->
-
-					<!-- createElement() form자식요소에 appendChild.appendChild.addClass() ->  -->
-
-
-					<input type="button" value="글 작성" style="float: right;"
-						onclick="goWrite(subMitBtn);" /> <input type="button" value="목록"
-						onclick="location.href='user_list.do'" />
-				</div>
-			</form>
-
+		</form>
+		<div>
 			<div style="float: left">
-				<h1 class="center" id="headline">MMH 음성인식 기능</h1>
+				<h4 class="center" id="headline">MMH 음성인식 기능</h4>
 				<div id="info">
 					<p id="info_start">오른쪽 마이크 버튼을 누르면 녹음이 시작됩니다.</p>
 					<p id="info_speak_now">음성인식 중 입니다.</p>
@@ -147,7 +161,6 @@
 							href="//www.google.com/chrome">Chrome</a> 버전 25 이상.
 					</p>
 				</div>
-
 				<div class="right">
 					<button id="start_button" onclick="startButton(event)">
 						<img id="start_img" src="./resources/img/mic.gif" alt="Start">
@@ -180,16 +193,21 @@
 						&nbsp;&nbsp; <select id="select_dialect"></select>
 					</div>
 				</div>
-			</div>
-		</div>
-		<!-- 서머노트 종료 -->
-	</div>
-	<div id="section">
-		<div id="text-voice">
-			<input type="text" id="text-voice" placeholder="음성녹음 텍스트로 적히는 공간">
-		</div>
-		<div id="voice">음성녹음 버튼 들어갈자리</div>
-	</div>
 
+			</div>
+
+
+
+			<div id="section">
+				<!-- 음성녹음 및 버튼 영역 -->
+				<div id="text-voice">
+					<input type="text" id="text-voice" placeholder="음성녹음 텍스트로 적히는 공간">
+				</div>
+				<div id="voice">음성녹음 버튼 들어갈자리</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- 전체 기능영역 종료 -->
 </body>
 </html>
