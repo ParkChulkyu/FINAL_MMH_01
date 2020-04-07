@@ -149,7 +149,7 @@ body {
                <source src='resources/admin/mov/main/mainvideo.mp4' type='video/mp4'>
             </video>
 
-            <div class='section1-modal'>
+            <div id='loginChk'>
                <ul>
                   <li>LOG IN</li>
                   <li>
