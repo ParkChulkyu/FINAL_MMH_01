@@ -8,31 +8,6 @@
 <head>
 <style type="text/css">
 h1 {
-<<<<<<< HEAD
-	text-align: center;
-}
-
-form {
-	margin: auto;
-	width: 414px;
-}
-
-body {
-	font: 13px/1 'Nanum Gothic', 'Roboto', 'Open Sans';
-	color: #626262;
-	background: #ffffff;
-}
-
-table {
-	height: 10px;
-	width: 5000px;
-}
-
-th {
-	font-size: 20px;
-	width: 116px;
-	height: 42px;
-=======
    text-align: center;
 }
 
@@ -56,7 +31,6 @@ th {
    font-size: 20px;
    width: 116px;
    height: 42px;
->>>>>>> d15a328c5b4cd7f4a8cecd23e7aa86ef40707205
 }
 </style>
 <meta charset="UTF-8">
@@ -161,62 +135,6 @@ th {
 
 </script>
 <body>
-<<<<<<< HEAD
-	
-	<h1>회원가입</h1>
-
-	<form action="sign.do" method="post" name="signFrm" id="signFrm">
-		<table>
-			<tr class="table-primary">
-				<th>아이디 :</th>
-				<td>
-					<input title="n" id="m_id" type="text" name="m_id" placeholder="ID" required />
-					<input id="check" type="button"value="중복" >
-				</td>
-			</tr>
-			<tr>
-				<td colspan=3 id="idCheck"></td>
-			</tr>
-			<tr class="table-primary">
-				<th>비밀번호 :</th>
-				<td><input type="password" name="m_pw" placeholder="PW"
-					onclick="idChkConfirm();" ></td>
-			</tr>
-			<tr class="table-primary">
-				<th>이름 :</th>
-				<td><input type="text" name="m_name" placeholder="이름"
-					onclick="idChkConfirm();" ></td>
-			</tr>
-			<tr class="table-primary">
-				<th>이메일 :</th>
-				<td>
-					<input type="text" id="m_email" name="m_email" onclick="idChkConfirm();">
-					<input type="button" value="Verify" onclick="verifyEmail();" id="verifyBtn"><br> Verify
-					<input type="checkbox" value="Completed" disabled="disabled" id="verifyBox"> 인증번호: 
-					<input type="text" value="" id="VerifyNum"> 
-					<input type="button" value="확인" onclick="emailChk();" id="verifyChk">
-				</td>
-			</tr>
-
-			<tr class="table-primary">
-
-				<th>도로명 주소 :</th>
-				<td><input id="addr" type="text" size="60" name="m_address"
-					value="<c:if test="${not empty dto}">${dto.m_addr}</c:if>"
-					onclick="goPopup();" readonly placeholder="클릭하면 도로명주소 입력가능!"><br />
-					<input id="addr2" type="text" size="30" name="m_address2"
-					value="<c:if test="${not empty dto}">${dto.m_addr2}</c:if>"
-					placeholder="상세 주소를 입력해주세요" /></td>
-			</tr>
-			<tr class="table-primary">
-				<td colspan="7">
-					<input type="submit" value="가입하기"> 
-					<input type="button" onclick="location.href='admin_main.do'" value="돌아가기" ></td>
-			</tr>
-		</table>
-	</form>
-	<%@ include file="footer.jsp" %> 
-=======
    
    <h1>회원가입</h1>
 
@@ -271,6 +189,5 @@ th {
       </table>
    </form>
    <%@ include file="footer.jsp" %> 
->>>>>>> d15a328c5b4cd7f4a8cecd23e7aa86ef40707205
 </body>
 </html>

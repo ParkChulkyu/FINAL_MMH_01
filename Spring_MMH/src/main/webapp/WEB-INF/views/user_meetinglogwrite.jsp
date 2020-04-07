@@ -35,7 +35,6 @@
 			focus : true, // 에디터 로딩 후 포커스 맞출지 여부
 			lang : 'ko-KR' // 언어(한글)
 		});
-<<<<<<< HEAD
 		//서머노트에 text 쓰기	  
 		// 	  $('#summernote').summernote('insertText',content);
 		//서머노트 쓰기 비활성화
@@ -48,7 +47,6 @@
 		//	  $('#summernote').summernote('undo');
 		//앞으로 가기
 		//	  $('#summernote').summernote('redo');
-=======
 		//서머노트에 text 쓰기     
 		//      $('#summernote').summernote('insertText',content);
 		//서머노트 쓰기 비활성화
@@ -61,21 +59,16 @@
 		//     $('#summernote').summernote('undo');
 		//앞으로 가기
 		//     $('#summernote').summernote('redo');
->>>>>>> d15a328c5b4cd7f4a8cecd23e7aa86ef40707205
 	});
 
 	//유효성 및 값 보내기
 	function goWrite(frm) {
-<<<<<<< HEAD
 		// 	console.log(frm)
-=======
 		//    console.log(frm)
->>>>>>> d15a328c5b4cd7f4a8cecd23e7aa86ef40707205
 
 		var ntitle = frm.ntitle.value;
 		var nwriter = frm.nwriter.value;
 		var ncontent = frm.ncontent.value; //가끔 구문 인식이 안될 때가 있음.
-<<<<<<< HEAD
 		// 	var ncontent = $("textarea[name='ncontent']").val(); //그때 대체사용할 구문
 
 		//	var ntop = document.getElementById("summernote").getAttribute("top",500);
@@ -91,7 +84,6 @@
 		// 		alert("제목이 없어 '이름없음'으로 등록되었습니다.");
 		//  		return true;
 		// 	}
-=======
 		//    var ncontent = $("textarea[name='ncontent']").val(); //그때 대체사용할 구문
 
 		//   var ntop = document.getElementById("summernote").getAttribute("top",500);
@@ -107,26 +99,19 @@
 		//       alert("제목이 없어 '이름없음'으로 등록되었습니다.");
 		//        return true;
 		//    }
->>>>>>> d15a328c5b4cd7f4a8cecd23e7aa86ef40707205
 		if (ncontent.trim() == '') {
 			alert("내용을 입력해주세요");
 			return false;
 		}
 
-<<<<<<< HEAD
 		// 	console.log('서머노트 유효성검사, nno(log 4 中 1) : '+ nno);
-=======
 		//    console.log('서머노트 유효성검사, nno(log 4 中 1) : '+ nno);
->>>>>>> d15a328c5b4cd7f4a8cecd23e7aa86ef40707205
 		console.log('서머노트 유효성검사, ntitle(log 4中2) : ' + ntitle);
 		console.log('서머노트 유효성검사, nwriter(log 4 中 3) : ' + nwriter);
 		console.log('서머노트 유효성검사, ncontent(log 4中 4) : ' + ncontent);
 		alert('sdsd');
-<<<<<<< HEAD
 		//	frm.submit();
-=======
 		//   frm.submit();
->>>>>>> d15a328c5b4cd7f4a8cecd23e7aa86ef40707205
 		document.getElementById('subMitBtn').submit();
 
 	}
@@ -147,78 +132,6 @@
 .poit {
 	position: absolute;
 }
-<<<<<<< HEAD
-* {
-	font-family: Verdana, Arial, sans-serif;
-}
-
-a:link {
-	color: #000;
-	text-decoration: none;
-}
-
-a:visited {
-	color: #000;
-}
-
-a:hover {
-	color: #33F;
-}
-
-.button {
-	background: -webkit-linear-gradient(top, #008dfd 0, #0370ea 100%);
-	border: 1px solid #076bd2;
-	border-radius: 3px;
-	color: #fff;
-	display: none;
-	font-size: 13px;
-	font-weight: bold;
-	line-height: 1.3;
-	padding: 8px 25px;
-	text-align: center;
-	text-shadow: 1px 1px 1px #076bd2;
-	letter-spacing: normal;
-}
-
-.center {
-	padding: 10px;
-	text-align: center;
-}
-
-.final {
-	color: black;
-	padding-right: 3px;
-}
-
-.interim {
-	color: gray;
-}
-
-.info {
-	font-size: 14px;
-	text-align: center;
-	color: #777;
-	display: none;
-}
-
-.right {
-	float: right;
-}
-
-.sidebyside {
-	display: inline-block;
-	width: 45%;
-	min-height: 40px;
-	text-align: left;
-	vertical-align: top;
-}
-
-#headline {
-	font-size: 40px;
-	font-weight: 300;
-}
-
-=======
 
 * {
 	font-family: Verdana, Arial, sans-serif;
@@ -290,7 +203,76 @@ a:hover {
 	font-weight: 300;
 }
 
->>>>>>> d15a328c5b4cd7f4a8cecd23e7aa86ef40707205
+* {
+	font-family: Verdana, Arial, sans-serif;
+}
+
+a:link {
+	color: #000;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #000;
+}
+
+a:hover {
+	color: #33F;
+}
+
+.button {
+	background: -webkit-linear-gradient(top, #008dfd 0, #0370ea 100%);
+	border: 1px solid #076bd2;
+	border-radius: 3px;
+	color: #fff;
+	display: none;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 1.3;
+	padding: 8px 25px;
+	text-align: center;
+	text-shadow: 1px 1px 1px #076bd2;
+	letter-spacing: normal;
+}
+
+.center {
+	padding: 10px;
+	text-align: center;
+}
+
+.final {
+	color: black;
+	padding-right: 3px;
+}
+
+.interim {
+	color: gray;
+}
+
+.info {
+	font-size: 14px;
+	text-align: center;
+	color: #777;
+	display: none;
+}
+
+.right {
+	float: right;
+}
+
+.sidebyside {
+	display: inline-block;
+	width: 45%;
+	min-height: 40px;
+	text-align: left;
+	vertical-align: top;
+}
+
+#headline {
+	font-size: 40px;
+	font-weight: 300;
+}
+
 #info {
 	font-size: 20px;
 	text-align: center;
@@ -321,15 +303,15 @@ a:hover {
 	<br>
 
 	<div>
-<<<<<<< HEAD
-		<div style="width: 60%; margin: auto;" >
-			<div>//1 </div>
-			<form action="save.do" method="post" id="subMitBtn" style="float: left;">
-				<input id="input_ntitle" type="text" name="ntitle" style="width: 20%;" placeholder="제목을 입력하세요" /> 
-					<input type="text" name="nwriter" style="width: 20%;" placeholder="작성자를 입력하세요" />
+		<div style="width: 60%; margin: auto;">
+			<div>//1</div>
+			<form action="save.do" method="post" id="subMitBtn"
+				style="float: left;">
+				<input id="input_ntitle" type="text" name="ntitle"
+					style="width: 20%;" placeholder="제목을 입력하세요" /> <input type="text"
+					name="nwriter" style="width: 20%;" placeholder="작성자를 입력하세요" />
 				<!--  진한씨넨 이렇게함
 				<input type="hidden" name="cr_no" value="${dto.cr_no}"/>
-=======
 		<div style="width: 60%; margin: auto;">
 			<div>//1</div>
 			<form action="save.do" method="post" id="subMitBtn"
@@ -339,7 +321,6 @@ a:hover {
 					name="nwriter" style="width: 20%;" placeholder="작성자를 입력하세요" />
 				<!--  진한씨넨 이렇게함
             <input type="hidden" name="cr_no" value="${dto.cr_no}"/>
->>>>>>> d15a328c5b4cd7f4a8cecd23e7aa86ef40707205
                <input type="hidden" name="cr_placeid" value="${dto.cr_placeid}"/>
                <input type="hidden" name="category" value="${dto.cr_category}" />
                <input type="hidden" name="cr_path" value="${dto.cr_path}">  -->
@@ -351,24 +332,17 @@ a:hover {
 					<!-- 메모장들 이곳저곳 들어가게 태그 생성 -->
 
 					<!-- createElement() form자식요소에 appendChild.appendChild.addClass() ->  -->
-<<<<<<< HEAD
 					<div class="poit"></div>
 					<div class="poit"></div>
 					<div class="poit"></div>
-=======
 
->>>>>>> d15a328c5b4cd7f4a8cecd23e7aa86ef40707205
 
 					<input type="button" value="글 작성" style="float: right;"
 						onclick="goWrite(subMitBtn);" /> <input type="button" value="목록"
 						onclick="location.href='user_list.do'" />
 				</div>
 			</form>
-<<<<<<< HEAD
-			
-=======
 
->>>>>>> d15a328c5b4cd7f4a8cecd23e7aa86ef40707205
 			<div style="float: left">
 				<h1 class="center" id="headline">MMH 음성인식 기능</h1>
 				<div id="info">
@@ -400,12 +374,9 @@ a:hover {
 					</button>
 				</div>
 				<div id="results">
-<<<<<<< HEAD
-					<span id="final_span" class="final"></span> <span id="interim_span"	class="interim"></span>
-=======
 					<span id="final_span" class="final"></span> <span id="interim_span"
-						class="interim"></span>
->>>>>>> d15a328c5b4cd7f4a8cecd23e7aa86ef40707205
+						class="interim"></span> <span id="final_span" class="final"></span>
+					<span id="interim_span" class="interim"></span>
 					<p>
 				</div>
 				<div class="center">
@@ -436,7 +407,6 @@ a:hover {
 </body>
 
 <script type="text/javascript">
-<<<<<<< HEAD
 var langs =
 	[['Afrikaans',       ['af-ZA']],
 	 ['Bahasa Indonesia',['id-ID']],
@@ -503,7 +473,6 @@ var langs =
 
 	for (var i = 0; i < langs.length; i++) {
 	  select_language.options[i] = new Option(langs[i][0], i);
-=======
 	var langs = [
 			[ 'Afrikaans', [ 'af-ZA' ] ],
 			[ 'Bahasa Indonesia', [ 'id-ID' ] ],
@@ -554,7 +523,6 @@ var langs =
 
 	for (var i = 0; i < langs.length; i++) {
 		select_language.options[i] = new Option(langs[i][0], i);
->>>>>>> d15a328c5b4cd7f4a8cecd23e7aa86ef40707205
 	}
 	select_language.selectedIndex = 6;
 	updateCountry();
@@ -562,7 +530,6 @@ var langs =
 	showInfo('info_start');
 
 	function updateCountry() {
-<<<<<<< HEAD
 	  for (var i = select_dialect.options.length - 1; i >= 0; i--) {
 	    select_dialect.remove(i);
 	  }
@@ -571,7 +538,6 @@ var langs =
 	    select_dialect.options.add(new Option(list[i][1], list[i][0]));
 	  }
 	  select_dialect.style.visibility = list[1].length == 1 ? 'hidden' : 'visible';
-=======
 		for (var i = select_dialect.options.length - 1; i >= 0; i--) {
 			select_dialect.remove(i);
 		}
@@ -581,7 +547,6 @@ var langs =
 		}
 		select_dialect.style.visibility = list[1].length == 1 ? 'hidden'
 				: 'visible';
->>>>>>> d15a328c5b4cd7f4a8cecd23e7aa86ef40707205
 	}
 
 	var create_email = false;
@@ -590,7 +555,6 @@ var langs =
 	var ignore_onend;
 	var start_timestamp;
 	if (!('webkitSpeechRecognition' in window)) {
-<<<<<<< HEAD
 	  upgrade();
 	} else {
 	  start_button.style.display = 'inline-block';
@@ -669,7 +633,6 @@ var langs =
 	function upgrade() {
 	  start_button.style.visibility = 'hidden';
 	  showInfo('info_upgrade');
-=======
 		upgrade();
 	} else {
 		start_button.style.display = 'inline-block';
@@ -748,22 +711,17 @@ var langs =
 	function upgrade() {
 		start_button.style.visibility = 'hidden';
 		showInfo('info_upgrade');
->>>>>>> d15a328c5b4cd7f4a8cecd23e7aa86ef40707205
 	}
 
 	var two_line = /\n\n/g;
 	var one_line = /\n/g;
 	function linebreak(s) {
-<<<<<<< HEAD
 	  return s.replace(two_line, '<p></p>').replace(one_line, '<br>');
-=======
 		return s.replace(two_line, '<p></p>').replace(one_line, '<br>');
->>>>>>> d15a328c5b4cd7f4a8cecd23e7aa86ef40707205
 	}
 
 	var first_char = /\S/;
 	function capitalize(s) {
-<<<<<<< HEAD
 	  return s.replace(first_char, function(m) { return m.toUpperCase(); });
 	}
 
@@ -828,7 +786,6 @@ var langs =
 	  } else {
 	    info.style.visibility = 'hidden';
 	  }
-=======
 		return s.replace(first_char, function(m) {
 			return m.toUpperCase();
 		});
@@ -895,12 +852,10 @@ var langs =
 		} else {
 			info.style.visibility = 'hidden';
 		}
->>>>>>> d15a328c5b4cd7f4a8cecd23e7aa86ef40707205
 	}
 
 	var current_style;
 	function showButtons(style) {
-<<<<<<< HEAD
 	  if (style == current_style) {
 	    return;
 	  }
@@ -909,7 +864,6 @@ var langs =
 	  email_button.style.display = style;
 	  copy_info.style.display = 'none';
 	  email_info.style.display = 'none';
-=======
 		if (style == current_style) {
 			return;
 		}
@@ -918,7 +872,6 @@ var langs =
 		email_button.style.display = style;
 		copy_info.style.display = 'none';
 		email_info.style.display = 'none';
->>>>>>> d15a328c5b4cd7f4a8cecd23e7aa86ef40707205
 	}
 </script>
 </html>
