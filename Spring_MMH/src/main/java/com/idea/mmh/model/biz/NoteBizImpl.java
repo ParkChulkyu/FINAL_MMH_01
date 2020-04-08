@@ -21,9 +21,9 @@ public class NoteBizImpl implements NoteBiz{
 	private NoteDao dao;
 	
 	@Override
-	public List<NoteDto> selectList() {
-		// TODO Auto-generated method stub
-		return dao.selectList();
+	public List<NoteDto> selectList(int M_no) {
+		logger.info("노트 리스트 관련 bizimpl입니다.");
+		return dao.selectList(M_no);
 	}
 
 	@Override
@@ -52,6 +52,12 @@ public class NoteBizImpl implements NoteBiz{
 		return dao.delete(nno);
 	}
 
+	@Override
+	public List<NoteDto> calList(String m_id) {
+		// TODO Auto-generated method stub
+		return dao.calList(m_id);
+	}
+	
 	@Override
 	public String test() {
 		// TODO Auto-generated method stub
